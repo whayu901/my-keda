@@ -6,16 +6,16 @@ import { TierData } from "../mocks/TierData";
 const Pricing = () => {
   return (
     <section id="pricing" className="pt-36 h-screen">
-      <div className="container">
+      <div className="px-5">
         <h1 className="text-center w-full font-bold text-xl">
           Pilih Tier Yang Ingin Anda Gunakan
         </h1>
 
-        <div className="pt-9 flex gap-5 justify-center">
+        <div className="pt-9 flex gap-5 justify-between overflow-x-auto md:overflow-x-hidden">
           {TierData.map((item, index) => (
             <div
               key={index}
-              className="border border-neutral-300 rounded-lg p-4 w-full relative md:hover:scale-105 transition-transform"
+              className="min-w-[200px] border border-neutral-300 hover:border-cyan-300 rounded-lg p-4 w-full relative md:hover:shadow-xl transition-transform"
             >
               {item.isFavorite && (
                 <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 flex justify-center w-full">
@@ -51,7 +51,7 @@ const Pricing = () => {
                   <span className="font-bold">Fitur Unggulan</span>
                 </div>
                 {item.feature.map((feature, ix) => (
-                  <div className="flex gap-3 items-center">
+                  <div key={ix} className="flex gap-3 items-center">
                     <AiOutlineCheck color="#00B090" />
                     <span>{feature}</span>
                   </div>

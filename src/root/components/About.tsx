@@ -2,7 +2,7 @@ import React, { memo } from "react";
 
 const About = () => {
   return (
-    <section id="about" className=" ">
+    <section id="about">
       <div className="container">
         <h1 className="mb-3 text-xl font-bold">About Us</h1>
         <span className="text-lg">

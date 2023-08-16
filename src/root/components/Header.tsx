@@ -67,6 +67,7 @@ const Nav = () => {
         </div>
 
         <div
+          data-testid="menu"
           onClick={() => setOpen(!open)}
           className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
         >
