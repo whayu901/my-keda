@@ -37,7 +37,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="md:w-1/2 hidden md:block md:-right-4">
+        <div className="md:w-1/2 hidden md:block md:-right-5">
           <img src="magicPattern.png" alt="magic pattern" />
         </div>
       </div>

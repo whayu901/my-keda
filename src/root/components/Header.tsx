@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineMenu, AiOutlineClose, AiFillInstagram } from "react-icons/ai";
+import ModalGeneral from "../../shared/components/ModalGeneral";
 
 const Nav = () => {
   let Links = [
@@ -8,6 +9,7 @@ const Nav = () => {
     { name: "CONTACT", link: "#contact" },
   ];
   const [open, setOpen] = useState(false);
+  const [isModal, setModal] = useState(false);
   const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
@@ -91,6 +93,10 @@ const Nav = () => {
             </li>
           ))}
           <button
+            onClick={() => {
+              setModal(true);
+              document.body.style.overflow = "hidden";
+            }}
             className="hover:border-1 border-2 border-cyan-300 text-cyan-300 py-2 px-6 rounded-lg md:ml-8 hover:bg-cyan-400 hover:text-white
     duration-500"
           >
@@ -98,6 +104,15 @@ const Nav = () => {
           </button>
         </ul>
       </div>
+
+      <ModalGeneral
+        isOpen={isModal}
+        onClose={() => {
+          setModal(false);
+          document.body.style.overflow = "unset";
+        }}
+        message="Hi ini Adalah Login Pop Up"
+      />
     </header>
   );
 };
